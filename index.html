@@ -117,23 +117,21 @@ ul {
 
   // 2. Which mode the page is in right now
   var dark = false;
-
   // 3. Paint the page one color and the embed block the other
-function paint() {
+  function paint() {
     var pageColor  = dark ? darkColor  : lightColor;
     var blockColor = dark ? lightColor : darkColor;
-document.documentElement.style.backgroundColor = pageColor;    document.documentElement.style.backgroundColor = pageColor;
+
+    document.documentElement.style.backgroundColor = pageColor;
     document.body.style.backgroundColor = pageColor;
     document.body.style.color = dark ? "white" : "black";
 
     var block = document.getElementById("embed-block");
     block.style.backgroundColor = blockColor;
     block.style.color = dark ? "black" : "white";
-}    block.style.backgroundColor = blockColor;
-    block.style.color = dark ? "black" : "white";
   }
-
-  // 4. When the button is clicked: flip the mode, then repaint
+  
+    // 4. When the button is clicked: flip the mode, then repaint
   function toggleDark() {
     dark = !dark;
     paint();
